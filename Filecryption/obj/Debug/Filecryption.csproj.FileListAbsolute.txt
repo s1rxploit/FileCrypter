@@ -1,0 +1,14 @@
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.exe.config
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.csprojResolveAssemblyReference.cache
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.Form1.resources
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.Properties.Resources.resources
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.csproj.GenerateResource.Cache
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.exe
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.pdb
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.exe
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.pdb
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.Form2.resources
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.exe.manifest
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.application
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.exe.manifest
+K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.application
