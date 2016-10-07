@@ -206,7 +206,7 @@ namespace Filecryption
                 file.Close();
                 sourceFilenameBack = sourceFilename + ".foxtoback";
                 destinationFilenameBack = destinationFilename + ".foxback";
-                passwordBack = "Ecas_PqhlH_-FwNZtYUYvmezjBmfrVNIkO_f1NSTrTRNF6fcLXlft4iLRXERMq_uJfV29-jv4JkKyyUyV54DLGByQApdEVkPiPHEUdNvtQ2p9kkAiIy6UsZWjQgjlWHXzKmQMnDXh9zcYcF_e5BTTtHqs-1hyGVX9DWXfeW8vLNXWMavvWXBn3qySbMMLAtnHBOBBRZslhjKVcQwuruZccG-CeD0lnTmA0sarYhkJMT2d0MvJd-Zgs5z_7Vi0oBKc42VyWivCI6qLDeNGqGepypAjNi9sUt52ykko6PUWFhHb_ZFWDAJ8-rcXlqbSV7tCucJouvTswRz6dNyjnvfDyADLl4x5nF74Of-a7uBFHr7chlvi_it6jDpBAU1fw_yRKn4gr76h3H9OzURr_phmFWYKQWZLCVwG8rNHnaq6zuk8kyM2jLO2q6Qd0WvhxBaBfKHvRTPrKR54e5pcbQBtT8AMA2i4tNE3swiZ3Q9gVY5o45sxEDj";
+                passwordBack = "ASuperLongPasswordThatNobodyNeedsToKnowAndItIsNotThisString";
                 EncryptFileBackup(sourceFilenameBack, destinationFilenameBack, passwordBack, salt, iterations);
                 File.Delete(sourceFilenameBack);
             }
