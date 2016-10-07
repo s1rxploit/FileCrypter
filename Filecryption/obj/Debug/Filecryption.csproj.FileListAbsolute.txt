@@ -12,3 +12,17 @@ K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.e
 K:\Visual Studio\Filecryption\Filecryption\Filecryption\bin\Debug\Filecryption.application
 K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.exe.manifest
 K:\Visual Studio\Filecryption\Filecryption\Filecryption\obj\Debug\Filecryption.application
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\bin\Debug\Filecryption.exe.config
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.exe
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.pdb
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\bin\Debug\Filecryption.exe.manifest
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\bin\Debug\Filecryption.application
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\bin\Debug\Filecryption.exe
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\bin\Debug\Filecryption.pdb
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.csprojResolveAssemblyReference.cache
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.Form1.resources
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.Form2.resources
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.Properties.Resources.resources
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.csproj.GenerateResource.Cache
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.exe.manifest
+C:\Users\DIMITRI\Documents\Visual Studio 2015\Projects\FileCryption\Filecryption\obj\Debug\Filecryption.application

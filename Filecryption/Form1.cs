@@ -28,6 +28,7 @@ namespace Filecryption
         public string destinationFilename;
         public string password;
         public string realEx;
+        public string sourceFilenameBack, destinationFilenameBack, passwordBack;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -96,9 +97,53 @@ namespace Filecryption
             {
                 using (CryptoStream cryptoStream = new CryptoStream(destination, transform, CryptoStreamMode.Write))
                 {
-                    using (FileStream source = new FileStream(sourceFilename, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    try
                     {
-                        source.CopyTo(cryptoStream);
+                        using (FileStream source = new FileStream(sourceFilename, FileMode.Open, FileAccess.Read, FileShare.Read))
+                        {
+                            source.CopyTo(cryptoStream);
+                        }
+                    }
+                    catch (CryptographicException exception)
+                    {
+                        if (exception.Message == "Padding is invalid and cannot be removed.")
+                            throw new ApplicationException("Universal Microsoft Cryptographic Exception (Not to be believed!)", exception);
+                        else
+                            throw;
+                    }
+                }
+            }
+        }
+
+        public void EncryptFileBackup(string sourceFilenameBack, string destinationFilenameBack, string passwordBack, byte[] salt, int iterations)
+        {
+            AesManaged aes = new AesManaged();
+            aes.BlockSize = aes.LegalBlockSizes[0].MaxSize;
+            aes.KeySize = aes.LegalKeySizes[0].MaxSize;
+            // NB: Rfc2898DeriveBytes initialization and subsequent calls to   GetBytes   must be eactly the same, including order, on both the encryption and decryption sides.
+            Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(passwordBack, salt, iterations);
+            aes.Key = key.GetBytes(aes.KeySize / 8);
+            aes.IV = key.GetBytes(aes.BlockSize / 8);
+            aes.Mode = CipherMode.CBC;
+            ICryptoTransform transform = aes.CreateEncryptor(aes.Key, aes.IV);
+
+            using (FileStream destination = new FileStream(destinationFilenameBack, FileMode.CreateNew, FileAccess.Write, FileShare.None))
+            {
+                using (CryptoStream cryptoStream = new CryptoStream(destination, transform, CryptoStreamMode.Write))
+                {
+                    try
+                    {
+                        using (FileStream source = new FileStream(sourceFilenameBack, FileMode.Open, FileAccess.Read, FileShare.Read))
+                        {
+                            source.CopyTo(cryptoStream);
+                        }
+                    }
+                    catch (CryptographicException exception)
+                    {
+                        if (exception.Message == "Padding is invalid and cannot be removed.")
+                            throw new ApplicationException("Universal Microsoft Cryptographic Exception (Not to be believed!)", exception);
+                        else
+                            throw;
                     }
                 }
             }
@@ -109,6 +154,7 @@ namespace Filecryption
 
         }
 
+        //browse File
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -122,6 +168,7 @@ namespace Filecryption
 
         }
 
+        //Not Used!
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -134,8 +181,10 @@ namespace Filecryption
 
         }
 
+        //Encrypt File
         private void button3_Click(object sender, EventArgs e)
         {
+            sourceFilename = this.textBox1.Text;
             password = textBox2.Text;
 
             if (password != null)
@@ -148,17 +197,37 @@ namespace Filecryption
                 MessageBox.Show("Enter a password");
                 return;
             }
+
+            if (checkBox1.Checked)
+            {
+                string lines = "Password to the file: " + destinationFilename + " = " + password;
+                System.IO.StreamWriter file = new System.IO.StreamWriter(sourceFilename + ".foxtoback");
+                file.WriteLine(lines);
+                file.Close();
+                sourceFilenameBack = sourceFilename + ".foxtoback";
+                destinationFilenameBack = destinationFilename + ".foxback";
+                passwordBack = "Ecas_PqhlH_-FwNZtYUYvmezjBmfrVNIkO_f1NSTrTRNF6fcLXlft4iLRXERMq_uJfV29-jv4JkKyyUyV54DLGByQApdEVkPiPHEUdNvtQ2p9kkAiIy6UsZWjQgjlWHXzKmQMnDXh9zcYcF_e5BTTtHqs-1hyGVX9DWXfeW8vLNXWMavvWXBn3qySbMMLAtnHBOBBRZslhjKVcQwuruZccG-CeD0lnTmA0sarYhkJMT2d0MvJd-Zgs5z_7Vi0oBKc42VyWivCI6qLDeNGqGepypAjNi9sUt52ykko6PUWFhHb_ZFWDAJ8-rcXlqbSV7tCucJouvTswRz6dNyjnvfDyADLl4x5nF74Of-a7uBFHr7chlvi_it6jDpBAU1fw_yRKn4gr76h3H9OzURr_phmFWYKQWZLCVwG8rNHnaq6zuk8kyM2jLO2q6Qd0WvhxBaBfKHvRTPrKR54e5pcbQBtT8AMA2i4tNE3swiZ3Q9gVY5o45sxEDj";
+                EncryptFileBackup(sourceFilenameBack, destinationFilenameBack, passwordBack, salt, iterations);
+                File.Delete(sourceFilenameBack);
+            }
+            else
+            {
+
+            }
             File.Delete(sourceFilename);
             MessageBox.Show("File Encrypted");
         }
 
+        //Not Used!
         private void button5_Click(object sender, EventArgs e)
         {
         }
 
+        //Decrypt File
         private void button4_Click(object sender, EventArgs e)
         {
             password = textBox2.Text;
+            sourceFilename = this.textBox1.Text;
 
             if (password != null)
             {
